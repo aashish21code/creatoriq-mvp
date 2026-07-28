@@ -7,6 +7,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 
 import { router } from './routes';
+import { authRouter } from './routes/auth';
 import { testConnection } from './config/database';
 import { logger } from './utils/logger';
 
@@ -27,6 +28,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
   res.json({ status: 'ok', service: 'creatoriq-backend', timestamp: new Date().toISOString() });
 });
 
+app.use('/auth', authRouter);
 app.use(router);
 
 // 404 handler — must come after all routes.
