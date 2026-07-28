@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: creatoriq-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: creatoriq
+    ports:
+      # Host 5433 -> container 5432, since a native PostgreSQL service
+      # already occupies host port 5432 on this machine.
+      - "5433:5432"
+    volumes:
+      - creatoriq_pgdata:/var/lib/postgresql/data
+
+volumes:
+  creatoriq_pgdata:
