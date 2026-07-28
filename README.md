@@ -68,3 +68,17 @@ REACT_APP_API_URL=http://localhost:3000
 REACT_APP_AUTH0_DOMAIN=
 REACT_APP_AUTH0_CLIENT_ID=
 ```
+
+## Development Roadmap
+- Week 1-3: Foundation & Authentication
+- Week 4-6: Competitor Monitoring
+- Week 7-9: Content Ideation
+- Week 10-12: Performance Prediction
+- Week 13-14: Multi-Platform Optimization
+- Week 15-16: Team Collaboration
+
+## License
+MIT
+
+## Author
+Aashish Prajapati
