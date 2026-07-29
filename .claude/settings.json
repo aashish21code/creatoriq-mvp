@@ -69,7 +69,9 @@
       "Bash(git -C /c/Users/panka/Desktop/creatoriq-mvp status --short)",
       "Bash(git -C /c/Users/panka/Desktop/creatoriq-mvp log --oneline -5)",
       "Bash(sleep 3; cat /tmp/backend_task1.log; echo \"---port check---\"; netstat -ano | grep \":3000\" | grep LISTENING)",
-      "Bash(sleep 15; cat /tmp/frontend_task2.log)"
+      "Bash(sleep 15; cat /tmp/frontend_task2.log)",
+      "Bash(git -c user.name=\"Aashish Prajapati\" -c user.email=\"info.aashishprajapati@gmail.com\" commit -m \"Add login page, Tailwind CSS, Auth0 SDK, database migration\")",
+      "Bash(git -c user.name=\"Aashish Prajapati\" -c user.email=\"info.aashishprajapati@gmail.com\" commit -m \"Update local Claude Code tool permissions\")"
     ]
   }
 }
