@@ -1,9 +1,24 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock('@auth0/auth0-react', () => ({
+  useAuth0: () => ({
+    loginWithRedirect: jest.fn(),
+    isAuthenticated: false,
+    isLoading: false,
+    error: undefined,
+  }),
+}));
+
+test('renders the login page at the root route', () => {
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(screen.getByRole('heading', { name: /creatoriq/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /log in/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /sign up/i })).toBeInTheDocument();
 });
